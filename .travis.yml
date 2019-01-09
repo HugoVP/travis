@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+script: skip
+deploy:
+  - provider: script
+    script:
+      docker build client
+    on:
+      repo: hugovp/client
+  - provider: script
+    script:
+      docker build api
+    on:
+      repo: hugovp/api
